@@ -48,6 +48,7 @@ CREATE TABLE posts (
   anon_id TEXT NOT NULL,
   body TEXT,
   media_url TEXT,
+  ip_address INET,
   is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
   deleted_at TIMESTAMP WITH TIME ZONE,
@@ -55,14 +56,18 @@ CREATE TABLE posts (
 );
 
 CREATE INDEX idx_posts_thread_created ON posts (thread_id, created_at);
+CREATE INDEX idx_posts_account_created ON posts (account_id, created_at);
+CREATE INDEX idx_posts_ip_created ON posts (ip_address, created_at);
 
 CREATE TABLE bans (
   id UUID PRIMARY KEY,
-  account_id UUID NOT NULL REFERENCES accounts(id),
+  account_id UUID REFERENCES accounts(id),
+  email TEXT,
   reason TEXT NOT NULL,
   expires_at TIMESTAMP WITH TIME ZONE,
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
-  created_by UUID NOT NULL REFERENCES moderators(id)
+  created_by UUID NOT NULL REFERENCES moderators(id),
+  CHECK (account_id IS NOT NULL OR email IS NOT NULL)
 );
 
 CREATE TABLE moderation_actions (
