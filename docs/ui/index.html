@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GeoSip UI Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo">GS</div>
+          <div>
+            <p class="title">GeoSip</p>
+            <p class="subtitle">Location-based imageboard</p>
+          </div>
+        </div>
+        <nav class="top-actions">
+          <button class="ghost">Sign in</button>
+          <button class="primary">Start a thread</button>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Now viewing</p>
+          <h1>Seattle, Washington</h1>
+          <p class="muted">
+            Threads are organized by geography. Switch scopes to see world, country, state,
+            or city conversations.
+          </p>
+        </div>
+        <div class="location-card">
+          <div class="location-row">
+            <div>
+              <p class="label">Scope</p>
+              <p class="value">City</p>
+            </div>
+            <button class="ghost">Change</button>
+          </div>
+          <div class="location-row">
+            <div>
+              <p class="label">Location</p>
+              <p class="value">Seattle · WA · US</p>
+            </div>
+            <button class="ghost">Browse</button>
+          </div>
+          <div class="location-row">
+            <div>
+              <p class="label">Filters</p>
+              <p class="value">Last 24 hours · All media</p>
+            </div>
+            <button class="ghost">Edit</button>
+          </div>
+        </div>
+      </section>
+
+      <main class="content">
+        <section class="threads">
+          <div class="section-header">
+            <h2>Active threads</h2>
+            <div class="chips">
+              <button class="chip active">Trending</button>
+              <button class="chip">Newest</button>
+              <button class="chip">Most replies</button>
+            </div>
+          </div>
+
+          <article class="thread-card">
+            <div class="thread-body">
+              <div class="thread-meta">
+                <span class="badge">City</span>
+                <span class="time">Updated 12m ago</span>
+              </div>
+              <h3>Best late-night eats near Capitol Hill?</h3>
+              <p class="muted">
+                Looking for spots that are still open past midnight. Bonus if there is
+                street parking nearby.
+              </p>
+              <div class="thread-stats">
+                <span>34 replies</span>
+                <span>12 images</span>
+                <span>Last reply by Anon-4F2</span>
+              </div>
+            </div>
+            <div class="thread-media">
+              <div class="media-placeholder">Preview</div>
+            </div>
+          </article>
+
+          <article class="thread-card">
+            <div class="thread-body">
+              <div class="thread-meta">
+                <span class="badge">City</span>
+                <span class="time">Updated 1h ago</span>
+              </div>
+              <h3>Cherry blossoms peak timing 2024</h3>
+              <p class="muted">
+                Anyone been down to the Arboretum this week? Trying to plan a weekend walk.
+              </p>
+              <div class="thread-stats">
+                <span>18 replies</span>
+                <span>6 images</span>
+                <span>Last reply by Anon-1A8</span>
+              </div>
+            </div>
+            <div class="thread-media">
+              <div class="media-placeholder">Preview</div>
+            </div>
+          </article>
+
+          <article class="thread-card">
+            <div class="thread-body">
+              <div class="thread-meta">
+                <span class="badge">City</span>
+                <span class="time">Updated 2h ago</span>
+              </div>
+              <h3>Weekly event roundup</h3>
+              <p class="muted">
+                Share flyers, links, or photos of events happening this weekend.
+              </p>
+              <div class="thread-stats">
+                <span>52 replies</span>
+                <span>24 images</span>
+                <span>Last reply by Anon-9C0</span>
+              </div>
+            </div>
+            <div class="thread-media">
+              <div class="media-placeholder">Preview</div>
+            </div>
+          </article>
+        </section>
+
+        <aside class="sidebar">
+          <section class="card">
+            <h3>Start a new thread</h3>
+            <p class="muted">
+              Your account stays private. Anon IDs are unique per thread.
+            </p>
+            <form class="composer">
+              <label>
+                Title
+                <input type="text" placeholder="Thread title" />
+              </label>
+              <label>
+                Post
+                <textarea rows="4" placeholder="What do you want to share?"></textarea>
+              </label>
+              <label class="upload">
+                Add image
+                <input type="file" />
+              </label>
+              <button class="primary full">Publish thread</button>
+            </form>
+          </section>
+
+          <section class="card">
+            <h3>Moderation & safety</h3>
+            <ul class="list">
+              <li>Rate limits apply to protect local communities.</li>
+              <li>Anonymous on the front-end, accountable in the backend.</li>
+              <li>Soft-deleted posts remain visible to moderators.</li>
+            </ul>
+          </section>
+        </aside>
+      </main>
+
+      <section class="thread-preview">
+        <div class="section-header">
+          <h2>Thread preview</h2>
+          <button class="ghost">View full thread</button>
+        </div>
+        <div class="post">
+          <div class="post-header">
+            <span class="anon">Anon-4F2</span>
+            <span class="time">2 minutes ago</span>
+          </div>
+          <p>
+            Tried Star Taco last night — open until 2am and the carnitas were perfect.
+            Parking on Pike is rough after 11 though.
+          </p>
+        </div>
+        <div class="post">
+          <div class="post-header">
+            <span class="anon">Anon-7D1</span>
+            <span class="time">5 minutes ago</span>
+          </div>
+          <p>
+            The ramen spot on Pine stays open until 1am. Order ahead if you do pickup.
+          </p>
+        </div>
+        <div class="post muted-post">
+          <div class="post-header">
+            <span class="anon">Anon-1C9</span>
+            <span class="time">20 minutes ago</span>
+          </div>
+          <p>Post removed by moderator.</p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>GeoSip · Built for local communities · Privacy-first moderation</p>
+      </footer>
+    </div>
+  </body>
+</html>
